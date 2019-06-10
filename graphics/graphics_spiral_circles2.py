@@ -31,7 +31,7 @@ Start - starting distance the radius is from the center.
         angle+=resolution
     return coords
 
-for a,b in spiral(800, .1, 1, 100.0):
+for a,b in spiral(800, .2, 1, 100.0):
     rcolor = (random.randint(0, 255))
     gcolor = (random.randint(0, 255))
     bcolor = (random.randint(0, 255))
