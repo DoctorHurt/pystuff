@@ -13,7 +13,7 @@ def spiral(N, M):
         if abs(x)>N/2 or abs(y)>M/2:    # non-square
             dx, dy = -dy, dx            # change direction
             x, y = -y+dx, x+dy          # jump
-        yield x*10, y*10
+        yield x*8, y*8
         x, y = x+dx, y+dy
 
 for a,b in spiral(80,80):
