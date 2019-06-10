@@ -31,13 +31,13 @@ Start - starting distance the radius is from the center.
         angle+=resolution
     return coords
 
-for a,b in spiral(800, .1, 1, 20.0):
+for a,b in spiral(800, .1, 1, 100.0):
     rcolor = (random.randint(0, 255))
     gcolor = (random.randint(0, 255))
     bcolor = (random.randint(0, 255))
     size = (random.randint(10, 50))
     pt = Point(a + 400, b + 400)
-    cir = Circle(pt, 50)
+    cir = Circle(pt, 20)
     cir.setFill(color_rgb(rcolor, gcolor, bcolor))
     cir.draw(win)
 
