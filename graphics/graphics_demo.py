@@ -69,7 +69,7 @@ def main():
     hair5.setWidth(3)
     hair5.draw(win)
 
-    img = Image(Point(400, 770), r"C:\Users\jeremyp\github\pystuff\graphics\bodysmall.gif")
+    img = Image(Point(400, 770), "bodysmall.gif")
     img.draw(win)
 
     win.getMouse() # Pause to view result
