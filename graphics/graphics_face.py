@@ -3,13 +3,13 @@ from graphics import *
 def main():
     win = GraphWin("My Window", 800, 800)
     win.setBackground(color_rgb(0, 255, 255))
-    
+
     cir = Circle(Point(400, 400), 300)
     cir.setOutline(color_rgb(0, 0, 0))
     cir.setFill(color_rgb(255, 255, 0))
     cir.setWidth(10)
     cir.draw(win)
-    
+
     eye1 = Circle(Point(300, 300), 50)
     eye1.setOutline(color_rgb(0, 0, 0))
     eye1.setFill(color_rgb(0, 0, 255))
