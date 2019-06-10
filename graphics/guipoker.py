@@ -72,7 +72,7 @@ class GraphicsInterface:
     def chooseDice(self):
         # choices is a list of the indexes of the selected dice
         choices = []                   # No dice chosen yet
-        while True: 
+        while True:
             # wait for user to click a valid button
             b = self.choose(["Die 1", "Die 2", "Die 3", "Die 4", "Die 5",
                              "Roll Dice", "Score"])
@@ -93,7 +93,7 @@ class GraphicsInterface:
                 elif choices != []:    # Don't accept Roll unless some
                     return choices     #   dice are actually selected
 
-    
+
     def choose(self, choices):
         buttons = self.buttons
 
