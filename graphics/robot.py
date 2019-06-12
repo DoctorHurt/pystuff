@@ -19,10 +19,12 @@ engineLight.draw(win)
 # Buttons
 pwrButton = Button(win, Point(200,30), 100, 30, "Power On/Off")
 pwrButton.activate()
-engineButton = Button(win, Point(380,30), 100, 30, "Engine On/Off")
+engineButton = Button(win, Point(380,30), 100, 30, "Motor On/Off")
 engineButton.activate()
-mvrtButton = Button(win, Point(300,100), 100, 30, "Move Right")
-mvrtButton.activate()
+mvrtButton = Button(win, Point(650,65), 50, 30, "Right")
+mvltButton = Button(win, Point(550,65), 50, 30, "Left")
+mvupButton = Button(win, Point(600,30), 50, 30, "Up")
+mvdnButton = Button(win, Point(600,100), 50, 30, "Down")
 quitButton = Button(win, Point(50,30), 50, 30, "Quit")
 quitButton.activate()
 
@@ -39,13 +41,26 @@ while not quitButton.clicked(pt):
         pwrOn = False
     elif engineButton.clicked(pt) and engineOn == False:
         engineLight.setFill(color_rgb(0, 255, 0))
+        mvrtButton.activate()
+        mvltButton.activate()
+        mvupButton.activate()
+        mvdnButton.activate()
         engineOn = True
     elif engineButton.clicked(pt) and engineOn == True:
         engineLight.setFill(color_rgb(255, 0, 0))
+        mvrtButton.deactivate()
+        mvltButton.deactivate()
+        mvupButton.deactivate()
+        mvdnButton.deactivate()
         engineOn = False
     elif mvrtButton.clicked(pt) and engineOn == True:
         robot.move(10,0)
-
+    elif mvltButton.clicked(pt) and engineOn == True:
+        robot.move(-10,0)
+    elif mvdnButton.clicked(pt) and engineOn == True:
+        robot.move(0,10)
+    elif mvupButton.clicked(pt) and engineOn == True:
+        robot.move(0,-10)
     pt = win.getMouse()
 
 # close up shop
