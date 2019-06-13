@@ -8,6 +8,10 @@ win.setBackground(color_rgb(100, 100, 100))
 robot = Image(Point(400, 400), "bb8.png")
 robot.draw(win)
 
+# Stormtrooper
+stormtrooper = Image(Point(600, 400), "stormtrooper.png")
+stormtrooper.draw(win)
+
 # Lights
 pwrLight = Circle(Point(280, 30), 20)
 pwrLight.setFill(color_rgb(255, 0, 0))
@@ -20,7 +24,6 @@ motorLight.draw(win)
 pwrButton = Button(win, Point(200,30), 100, 30, "Power On/Off")
 pwrButton.activate()
 motorButton = Button(win, Point(380,30), 100, 30, "Motor On/Off")
-motorButton.activate()
 mvrtButton = Button(win, Point(650,65), 50, 30, "Right")
 mvltButton = Button(win, Point(550,65), 50, 30, "Left")
 mvupButton = Button(win, Point(600,30), 50, 30, "Up")
@@ -36,9 +39,17 @@ while not quitButton.clicked(pt):
     if pwrButton.clicked(pt) and pwrOn == False:
         pwrLight.setFill(color_rgb(0, 255, 0))
         pwrOn = True
+        motorButton.activate()
     elif pwrButton.clicked(pt) and pwrOn == True:
         pwrLight.setFill(color_rgb(255, 0, 0))
         pwrOn = False
+        motorButton.deactivate()
+        motorLight.setFill(color_rgb(255, 0, 0))
+        mvrtButton.deactivate()
+        mvltButton.deactivate()
+        mvupButton.deactivate()
+        mvdnButton.deactivate()
+        motorOn = False
     elif motorButton.clicked(pt) and motorOn == False:
         motorLight.setFill(color_rgb(0, 255, 0))
         mvrtButton.activate()
