@@ -1,3 +1,7 @@
+"""
+Draw a smilye face using simple shapes and manual coords
+"""
+
 from graphics import *
 
 def main():
