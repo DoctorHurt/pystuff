@@ -40,6 +40,10 @@ while not quitButton.clicked(pt):
         pwrLight.setFill(color_rgb(0, 255, 0))
         pwrOn = True
         motorButton.activate()
+        where = robot.getAnchor()
+        robotOn = Image(where, "bb8-on.png")
+        robotOn.draw(win)
+        robot.undraw()
     elif pwrButton.clicked(pt) and pwrOn == True:
         pwrLight.setFill(color_rgb(255, 0, 0))
         pwrOn = False
@@ -50,6 +54,10 @@ while not quitButton.clicked(pt):
         mvupButton.deactivate()
         mvdnButton.deactivate()
         motorOn = False
+        where = robotOn.getAnchor()
+        robot = Image(where, "bb8.png")
+        robot.draw(win)
+        robotOn.undraw()
     elif motorButton.clicked(pt) and motorOn == False:
         motorLight.setFill(color_rgb(0, 255, 0))
         mvrtButton.activate()
@@ -65,13 +73,13 @@ while not quitButton.clicked(pt):
         mvdnButton.deactivate()
         motorOn = False
     elif mvrtButton.clicked(pt) and motorOn == True:
-        robot.move(10,0)
+        robotOn.move(10,0)
     elif mvltButton.clicked(pt) and motorOn == True:
-        robot.move(-10,0)
+        robotOn.move(-10,0)
     elif mvdnButton.clicked(pt) and motorOn == True:
-        robot.move(0,10)
+        robotOn.move(0,10)
     elif mvupButton.clicked(pt) and motorOn == True:
-        robot.move(0,-10)
+        robotOn.move(0,-10)
     pt = win.getMouse()
 
 # close up shop
