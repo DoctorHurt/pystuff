@@ -1,3 +1,5 @@
+""" Draws lots of circles with random points, colors, and sizes """
+
 from graphics import *
 import random
 

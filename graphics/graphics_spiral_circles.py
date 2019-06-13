@@ -1,3 +1,5 @@
+""" Draw a square matrix spiral using randomly colored circles """
+
 from graphics import *
 import random
 

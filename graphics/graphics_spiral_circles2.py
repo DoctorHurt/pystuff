@@ -1,3 +1,9 @@
+"""
+Draw a round spiral with circle shapes.
+Uses a spiral generator function found on Github.
+Play aound with spiral() inputs for different results.
+"""
+
 from graphics import *
 import math
 import sys

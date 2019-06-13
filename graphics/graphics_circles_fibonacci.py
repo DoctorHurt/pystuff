@@ -1,3 +1,5 @@
+""" Testing ways to use a fibonacci sequenct to draw stuff. Needs work. """
+
 from graphics import *
 import random
 
