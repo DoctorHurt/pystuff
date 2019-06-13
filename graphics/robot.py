@@ -1,3 +1,8 @@
+"""
+A simple robot controller "game" to power up and move a robot around the screen.
+Work in progress...
+"""
+
 from graphics import *
 from button import Button
 
