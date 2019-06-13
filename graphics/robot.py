@@ -4,11 +4,9 @@ from button import Button
 win = GraphWin("My Robot Window", 1200, 800)
 win.setBackground(color_rgb(100, 100, 100))
 
-# Robot
+# Images
 robot = Image(Point(400, 400), "bb8.png")
 robot.draw(win)
-
-# Stormtrooper
 stormtrooper = Image(Point(600, 400), "stormtrooper.png")
 stormtrooper.draw(win)
 
