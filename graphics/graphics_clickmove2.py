@@ -1,5 +1,6 @@
 """
 Testing ways to move an object around the screen using mouse clicks.
+This one just moves the object directly to where you click, no move animation.
 """
 
 from graphics import *
