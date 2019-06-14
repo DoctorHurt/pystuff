@@ -7,7 +7,7 @@ from graphics import *
 win = GraphWin("My Window", 800, 800)
 win.setBackground('grey')
 
-cir = Circle (Point(400, 400), 30)
+cir = Circle(Point(400, 400), 30)
 cir.setFill('red')
 cir.draw(win)
 
@@ -17,8 +17,8 @@ while True:
     ycoord = int(m.getY())
     wherex = int(cir.getCenter().getX())
     wherey = int(cir.getCenter().getY())
-    movex = int(xcoord - wherex)
-    movey = int(ycoord - wherey)
+    movex = xcoord - wherex
+    movey = ycoord - wherey
 
     if movex > 0:
         xrange = range(1, movex, 1)
