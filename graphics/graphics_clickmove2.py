@@ -29,17 +29,5 @@ while True:
         yrange = range(1, movey, 1)
     else:
         yrange = range(1, movey, -1)
-
-    for x in xrange:
-        print(f"x is: {x}")
-        if movex > 0:
-            cir.move(1, 0)
-        else:
-            cir.move(-1, 0)
-
-    for y in yrange:
-        print(f"y is: {y}")
-        if movey > 0:
-            cir.move(0, 1)
-        else:
-            cir.move(0, -1)
+    print(movex, movey)
+    cir.move(movex, movey)
