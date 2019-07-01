@@ -22,6 +22,12 @@ pwrLight.draw(win)
 motorLight = Circle(Point(480, 30), 20)
 motorLight.setFill(color_rgb(255, 0, 0))
 motorLight.draw(win)
+selectLightRobot = Circle(Point(120, 80), 20)
+selectLightRobot.setFill(color_rgb(0, 255, 0))
+selectLightRobot.draw(win)
+selectLightStormtrooper = Circle(Point(120, 125), 20)
+selectLightStormtrooper.setFill(color_rgb(255, 0, 0))
+selectLightStormtrooper.draw(win)
 
 # Buttons
 pwrButton = Button(win, Point(200,30), 100, 30, "Power On/Off")
@@ -32,6 +38,8 @@ mvltButton = Button(win, Point(550,65), 50, 30, "Left")
 mvupButton = Button(win, Point(600,30), 50, 30, "Up")
 mvdnButton = Button(win, Point(600,100), 50, 30, "Down")
 quitButton = Button(win, Point(50,30), 50, 30, "Quit")
+selectButton = Button(win, Point(50,80), 70, 30, "Select")
+selectButton.activate()
 quitButton.activate()
 
 # Event loop
@@ -76,13 +84,13 @@ while not quitButton.clicked(pt):
         mvdnButton.deactivate()
         motorOn = False
     elif mvrtButton.clicked(pt) and motorOn == True:
-        robotOn.move(10,0)
+        robotOn.move(15,0)
     elif mvltButton.clicked(pt) and motorOn == True:
-        robotOn.move(-10,0)
+        robotOn.move(-15,0)
     elif mvdnButton.clicked(pt) and motorOn == True:
-        robotOn.move(0,10)
+        robotOn.move(0,15)
     elif mvupButton.clicked(pt) and motorOn == True:
-        robotOn.move(0,-10)
+        robotOn.move(0,-15)
     pt = win.getMouse()
 
 # close up shop
