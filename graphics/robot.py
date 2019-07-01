@@ -22,12 +22,18 @@ pwrLight.draw(win)
 motorLight = Circle(Point(480, 30), 20)
 motorLight.setFill(color_rgb(255, 0, 0))
 motorLight.draw(win)
-selectLightRobot = Circle(Point(120, 80), 20)
-selectLightRobot.setFill(color_rgb(0, 255, 0))
-selectLightRobot.draw(win)
-selectLightStormtrooper = Circle(Point(120, 125), 20)
-selectLightStormtrooper.setFill(color_rgb(255, 0, 0))
-selectLightStormtrooper.draw(win)
+selectRobotLight = Rectangle(Point(100, 70), Point(200, 100))
+selectRobotLight.setFill(color_rgb(0, 255, 0))
+selectRobotLight.draw(win)
+selectStormtrooperLight = Rectangle(Point(100, 110), Point(200, 140))
+selectStormtrooperLight.setFill(color_rgb(255, 0, 0))
+selectStormtrooperLight.draw(win)
+
+# Text objects
+robotLightText = Text(selectRobotLight.getCenter(), "Robot")
+robotLightText.draw(win)
+stormtrooperLightText = Text(selectStormtrooperLight.getCenter(), "Stormtrooper")
+stormtrooperLightText.draw(win)
 
 # Buttons
 pwrButton = Button(win, Point(200,30), 100, 30, "Power On/Off")
@@ -38,7 +44,7 @@ mvltButton = Button(win, Point(550,65), 50, 30, "Left")
 mvupButton = Button(win, Point(600,30), 50, 30, "Up")
 mvdnButton = Button(win, Point(600,100), 50, 30, "Down")
 quitButton = Button(win, Point(50,30), 50, 30, "Quit")
-selectButton = Button(win, Point(50,80), 70, 30, "Select")
+selectButton = Button(win, Point(50,105), 70, 30, "Select")
 selectButton.activate()
 quitButton.activate()
 
@@ -46,8 +52,20 @@ quitButton.activate()
 pt = win.getMouse()
 pwrOn = False
 motorOn = False
+robotSelected = True
+stormtrooperSelected = False
 while not quitButton.clicked(pt):
-    if pwrButton.clicked(pt) and pwrOn == False:
+    if selectButton.clicked(pt) and robotSelected == True:
+        selectRobotLight.setFill(color_rgb(255, 0, 0))
+        selectStormtrooperLight.setFill(color_rgb(0, 255, 0))
+        robotSelected = False
+        stormtrooperSelected = True
+    elif selectButton.clicked(pt) and stormtrooperSelected == True:
+        selectRobotLight.setFill(color_rgb(0, 255, 0))
+        selectStormtrooperLight.setFill(color_rgb(255, 0, 0))
+        robotSelected = True
+        stormtrooperSelected = False
+    elif pwrButton.clicked(pt) and pwrOn == False:
         pwrLight.setFill(color_rgb(0, 255, 0))
         pwrOn = True
         motorButton.activate()
